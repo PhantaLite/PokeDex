@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import Trainer from "../interfaces/Trainer.interface";
+import { Input } from "antd";
+import User from "../interface/User.interface";
 
 // const { Search } = Input;
 
@@ -14,9 +15,9 @@ interface Pokemon {
   imageUrl: string;
 }
 
-export class PokemonSearch extends Component<Trainer, SearchState> {
+export class PokemonSearch extends Component<User, SearchState> {
   pokemonRef: React.RefObject<HTMLInputElement>;
-  constructor(props: Trainer) {
+  constructor(props: User) {
     super(props);
     this.state = {
       error: false,
@@ -59,14 +60,10 @@ export class PokemonSearch extends Component<Trainer, SearchState> {
       result = (
         <div>
           <img src={pokemon.imageUrl} alt="pokemon" className="pokemon-image" />
-          <h3>Name: {pokemon.name}</h3>
-          <span>&nbsp;</span>
-          <h3> Number of Abilites: {pokemon.numberOfAbilities}</h3>
-          <span>&nbsp;</span>
-          <h3>Base Experience: {pokemon.baseExperience}</h3>
           <p>
-            Power: {pokemon.name} \n
-            {pokemon.numberOfAbilities} \n Base experience points:
+            {" "}
+            {pokemon.name} abilities are {pokemon.numberOfAbilities} and base
+            experience points:
             {pokemon.baseExperience}
           </p>
         </div>
@@ -75,10 +72,19 @@ export class PokemonSearch extends Component<Trainer, SearchState> {
 
     return (
       <>
-        <h2>
+        <p>
           Pokémon Trainer {trainerName} has{" "}
           {numberOfPokemons && <span>has {numberOfPokemons} Pokémons</span>}
-        </h2>
+          Pokémons
+        </p>
+        {/* <Search
+          placeholder="Search Pokémon..."
+          enterButton="Search"
+          style={{ width: 500 }}
+          size="large"
+          onSearch={this.onSearchClick}
+          ref={this.pokemonRef}
+        ></Search> */}
         <input type="text" ref={this.pokemonRef} />
         <button onClick={this.onSearchClick} className="my-button">
           Search
