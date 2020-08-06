@@ -34,7 +34,8 @@ const PokemonCard = (props: any) => {
   useEffect(() => {
     const { name } = props;
     const pokeIndex = props.url.split("/")[props.url.split("/").length - 2];
-    const imageUrl = `https://github.com/PokeAPI/sprites/blob/master/sprites/pokemon/${pokeIndex}.png?raw=true`;
+    // const imageUrl = `https://github.com/PokeAPI/sprites/blob/master/sprites/pokemon/${pokeIndex}.png?raw=true`;
+    const imageUrl = `https://pokeres.bastionbot.org/images/pokemon/${pokeIndex}.png`;
 
     setState({ name, imageUrl, pokeIndex });
   }, [props]);

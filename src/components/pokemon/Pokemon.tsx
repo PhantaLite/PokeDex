@@ -62,7 +62,7 @@ function Pokemon(props: any): ReactElement {
     const pokemonSpeciesUrl = `https://pokeapi.co/api/v2/pokemon-species/${pokemonIndex}/`;
     const pokemonResponse = await axios.get(pokemonUrl);
     const name = pokemonResponse.data.name;
-    const imageUrl = pokemonResponse.data.sprites.front_default;
+    const imageUrl = `https://pokeres.bastionbot.org/images/pokemon/${pokemonIndex}.png`;
 
     pokemonResponse.data.stats.map((stat: any) => {
       switch (stat.stat.name) {
