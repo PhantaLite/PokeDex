@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { url } from "inspector";
 import styled from "styled-components";
 import spinner from "../pokemon/25.gif";
 import { Link } from "react-router-dom";
